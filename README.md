@@ -16,11 +16,11 @@
 
 <p align="center">
   <strong>
-    <a href="http://linuxdash.afaqtariq.com"><i>Demo</i></a> &nbsp;|&nbsp;
-    <a href="#features"><i>Features</i></a> &nbsp;|&nbsp;
-    <a href="#installation">
-      <i>Installation</i></a> &nbsp;|&nbsp;
-    <a href="#support"><i>Support</i></a>
+    <a href="#"><i>Demo</i></a> &nbsp;|&nbsp;
+    <a href="#特性"><i>特性</i></a> &nbsp;|&nbsp;
+    <a href="#安装">
+      <i>安装</i></a> &nbsp;|&nbsp;
+    <a href="#支持"><i>支持</i></a>
   </strong>
 </p>
 
