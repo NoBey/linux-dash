@@ -11,11 +11,11 @@
       $routeProvider.
       when('/loading', {
         templateUrl: 'templates/app/loading.html',
-        controller: function appLoadController ($scope, $location, $rootScope) {
+        controller: function appLoadController($scope, $location, $rootScope) {
 
           var loadUrl = localStorage.getItem('currentTab') || 'system-status';
 
-          var loadLinuxDash = function () {
+          var loadLinuxDash = function() {
             $location.path(loadUrl);
           };
 
@@ -200,7 +200,7 @@
     server.checkIfWebsocketsAreSupported();
 
     var currentRoute = $location.path();
-    var currentTab = (currentRoute === '/loading')? 'system-status': currentRoute;
+    var currentTab = (currentRoute === '/loading') ? 'system-status' : currentRoute;
     localStorage.setItem('currentTab', currentTab);
 
     $location.path('/loading');
@@ -224,7 +224,14 @@
         ];
 
         scope.getNavItemName = function(url) {
-          return url.replace('-', ' ');
+          var navbarList = {
+            'system-status' : '系统状态',
+            'basic-info' : '基础信息',
+            'network' : '网络信息',
+            'accounts' : '用户信息',
+            'apps' : '应用信息'
+          }
+          return navbarList[url];
         };
 
         scope.isActive = function(route) {
@@ -495,10 +502,10 @@
         });
 
         // smoothieJS - set up canvas element for chart
-        canvas  = element.find('canvas')[0];
-        series  = new TimeSeries();
-        w       = canvas.width;
-        h       = canvas.height;
+        canvas = element.find('canvas')[0];
+        series = new TimeSeries();
+        w = canvas.width;
+        h = canvas.height;
 
         chart.addTimeSeries(series, {
           strokeStyle: 'rgba(' + scope.color + ', 1)',
@@ -513,7 +520,7 @@
         // update data on chart
         scope.getData = function() {
 
-          if(scope.initializing)
+          if (scope.initializing)
             scope.initializing = false
 
           if (dataCallInProgress) return;
@@ -528,7 +535,7 @@
             }
 
             dataCallInProgress = false;
-            scope.lastGet      = new Date().getTime();
+            scope.lastGet = new Date().getTime();
 
             // change graph colour depending on usage
             if (scope.maxValue / 4 * 3 < scope.getDisplayValue(serverResponseData)) {
@@ -629,11 +636,11 @@
         }];
 
         // smoothieJS - set up canvas element for chart
-        var canvas          = element.find('canvas')[0];
-        w                   = canvas.width;
-        h                   = canvas.height;
-        scope.seriesArray   = [];
-        scope.metricsArray  = [];
+        var canvas = element.find('canvas')[0];
+        w = canvas.width;
+        h = canvas.height;
+        scope.seriesArray = [];
+        scope.metricsArray = [];
 
         // get the data once to set up # of lines on chart
         server.get(scope.moduleName, function(serverResponseData) {

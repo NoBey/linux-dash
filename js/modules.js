@@ -88,7 +88,7 @@
         };
 
         scope.ramMetrics = [{
-          name: 'Used',
+          name: '使用',
           generate: function(serverResponseData) {
             var ratio = serverResponseData.used / serverResponseData.total;
             var percentage = parseInt(ratio * 100);
@@ -98,7 +98,7 @@
           }
         },
         {
-          name: 'Free',
+          name: '空闲',
           generate: function(serverResponseData) {
 
             var freeRam = humanizeRam(serverResponseData.free);
@@ -158,7 +158,7 @@
         };
 
         scope.utilMetrics = [{
-          name: 'Usage',
+          name: '使用率',
           generate: function(serverResponseData) {
             return serverResponseData + ' %';
           }
@@ -206,51 +206,51 @@
     },
     {
       name: 'ramIntensiveProcesses',
-      template: '<table-data heading="RAM Intensive Processes" module-name="ram_intensive_processes" info="Processes which are using most RAM."></table-data>'
+      template: '<table-data heading="进程内存使用情况" module-name="ram_intensive_processes" info="使用内存最多的进程"></table-data>'
     },
     {
       name: 'cpuIntensiveProcesses',
-      template: '<table-data heading="CPU Intensive Processes" module-name="cpu_intensive_processes" info="Processes which are using most CPU."></table-data>'
+      template: '<table-data heading="进程CPU使用情况" module-name="cpu_intensive_processes" info="使用CPU最多的进程"></table-data>'
     },
     {
       name: 'dockerProcesses',
-      template: '<table-data heading="Docker Processes" module-name="docker_processes" info="Processes in Docker Containers sorted by CPU."></table-data>'
+      template: '<table-data heading="Docker 进程详情" module-name="docker_processes" info="按Docker Containers使用的CPU排序"></table-data>'
     },
     {
       name: 'networkConnections',
-      template: '<table-data heading="Network Connections" module-name="network_connections"></table-data>'
+      template: '<table-data heading="网络连接情况" module-name="network_connections"></table-data>'
     },
     {
       name: 'serverAccounts',
-      template: '<table-data heading="Accounts" module-name="user_accounts" info="User accounts on this server."></table-data>'
+      template: '<table-data heading="用户信息" module-name="user_accounts" info="服务器上的用户帐户"></table-data>'
     },
     {
       name: 'loggedInAccounts',
-      template: '<table-data heading="Logged In Accounts" module-name="logged_in_users" info="Users currently logged in."></table-data>'
+      template: '<table-data heading="登录帐户" module-name="logged_in_users" info="当前登录的用户"></table-data>'
     },
     {
       name: 'recentLogins',
-      template: '<table-data heading="Recent Logins" module-name="recent_account_logins" info="Recent user sessions."></table-data>'
+      template: '<table-data heading="最近登录" module-name="recent_account_logins" info="最近登录的用户."></table-data>'
     },
     {
       name: 'arpCacheTable',
-      template: '<table-data heading="ARP Cache Table" module-name="arp_cache"></table-data>'
+      template: '<table-data heading="ARP缓存表" module-name="arp_cache"></table-data>'
     },
     {
       name: 'commonApplications',
-      template: '<table-data heading="Common Applications" module-name="common_applications" info="List of commonly installed applications."></table-data>'
+      template: '<table-data heading="常见的应用信息" module-name="common_applications" info="常用安装的应用程序信息"></table-data>'
     },
     {
       name: 'pingSpeeds',
-      template: '<table-data heading="Ping Speeds" module-name="ping" info="Ping speed in milliseconds."></table-data>'
+      template: '<table-data heading="Ping值速度" module-name="ping" info="Ping值速度精确到毫秒"></table-data>'
     },
     {
       name: 'bandwidth',
-      template: '<table-data heading="Bandwidth" module-name="bandwidth"></table-data>'
+      template: '<table-data heading="带宽" module-name="bandwidth"></table-data>'
     },
     {
       name: 'swapUsage',
-      template: '<table-data heading="Swap Usage" module-name="swap"></table-data>'
+      template: '<table-data heading="虚拟内存的使用情况" module-name="swap"></table-data>'
     },
     /*{
       name: 'cpuTemp',
@@ -258,39 +258,39 @@
     },*/
     {
       name: 'internetSpeed',
-      template: '<key-value-list heading="Internet Speed" module-name="internet_speed" info="Internet connection speed of server."></key-value-list>'
+      template: '<key-value-list heading="网速情况" module-name="internet_speed" info="Internet connection speed of server."></key-value-list>'
     },
     {
       name: 'memcached',
-      template: '<key-value-list heading="Memcached" module-name="memcached"></key-value-list>'
+      template: '<key-value-list heading="Memcached" module-name="memcached" info="Memcached 是一个高性能的分布式内存对象缓存系统，用于动态Web应用以减轻数据库负载"></key-value-list>'
     },
     {
       name: 'redis',
-      template: '<key-value-list heading="Redis" module-name="redis"></key-value-list>'
+      template: '<key-value-list heading="Redis" module-name="redis" info="Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库"></key-value-list>'
     },
     {
       name: 'pm2',
-      template: '<table-data heading="P(rocess) M(anager) 2" module-name="pm2" info="pm2 read-out."></table-data>'
+      template: '<table-data heading="P(rocess) M(anager) 2" module-name="pm2" info="PM2是一个带有负载均衡功能的Node应用的进程管理器"></table-data>'
     },
     {
       name: 'memoryInfo',
-      template: '<key-value-list heading="Memory Info" module-name="memory_info" info="/proc/meminfo read-out."></key-value-list>'
+      template: '<key-value-list heading="内存信息" module-name="memory_info" info="/proc/meminfo read-out."></key-value-list>'
     },
     {
       name: 'cpuInfo',
-      template: '<key-value-list heading="CPU Info" module-name="cpu_info" info="/usr/bin/lscpu read-out."></key-value-list>'
+      template: '<key-value-list heading="CPU信息" module-name="cpu_info" info="/usr/bin/lscpu read-out."></key-value-list>'
     },
     {
       name: 'ioStats',
-      template: '<table-data heading="IO Stats" module-name="io_stats" info="/proc/diskstats read-out."></table-data>'
+      template: '<table-data heading="磁盘IO" module-name="io_stats" info="/proc/diskstats read-out."></table-data>'
     },
     {
       name: 'scheduledCrons',
-      template: '<table-data heading="Scheduled Cron Jobs" module-name="scheduled_crons" info="Crons for all users on the server."></table-data>'
+      template: '<table-data heading="计划任务" module-name="scheduled_crons" info="Crons for all users on the server."></table-data>'
     },
     {
       name: 'cronHistory',
-      template: '<table-data heading="Cron Job History" module-name="cron_history" info="Crons which have run recently."></table-data>'
+      template: '<table-data heading="历史任务" module-name="cron_history" info="Crons which have run recently."></table-data>'
     },
     {
       name: 'raidStats',
