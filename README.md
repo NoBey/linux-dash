@@ -25,16 +25,18 @@
 </p>
 
 <p align="center">
-  <a href="https://gitter.im/afaqurk/linux-dash">
+  <a href="https://github.com/NoBey/linux-dash-zh">
     <img
-      src="https://badges.gitter.im/gitterHQ/gitter.png"
-      alt="Linux Dash Gitter chat">
+      width="80%"
+      src="./linux-dash.png"
+      alt="Linux Dash 中文版">
   </a>
 </p>
 
 <br/>
+
 <p align="center">
-  <a href="http://linuxdash.afaqtariq.com">
+  <a href="https://github.com/NoBey/linux-dash-zh">
     <img
       width="80%"
       alt="Linux Dash screenshot"
@@ -43,7 +45,13 @@
 </p>
 
 <br/>
-
+<p align="center">
+  <a href="https://github.com/NoBey/linux-dash-zh">
+    <img
+      src="https://badges.gitter.im/gitterHQ/gitter.png"
+      alt="Linux Dash Gitter chat">
+  </a>
+</p>
 ## 特性
 * 一个漂亮, 简单的基于web的linux服务器监控面板
 * 仅仅只需要1MB *(.git removed)*
