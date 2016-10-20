@@ -13,7 +13,7 @@
       templateUrl: 'templates/modules/disk-space.html',
       link: function(scope) {
 
-        scope.heading = "Disk Partitions";
+        scope.heading = "磁盘分区";
 
         scope.getData = function() {
           server.get('disk_partitions', function(serverResponseData) {
@@ -198,11 +198,11 @@
   var simpleTableModules = [
     {
       name: 'machineInfo',
-      template: '<key-value-list heading="General Info." module-name="general_info" info="System Information"></key-value-list>'
+      template: '<key-value-list heading="基本信息" module-name="general_info" info="系统信息"></key-value-list>'
     },
     {
       name: 'ipAddresses',
-      template: '<table-data heading="IP Addresses" module-name="ip_addresses" info="IPs assigned to this server"></table-data>'
+      template: '<table-data heading="IP地址" module-name="ip_addresses" info="服务器的IP"></table-data>'
     },
     {
       name: 'ramIntensiveProcesses',
