@@ -123,4 +123,4 @@ To build a binary, run `go build && ./server -h`. See [@tehbilly](https://github
 
 ## 支持
 
-有问题请提 `issues`
+ `issues`
