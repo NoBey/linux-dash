@@ -1,27 +1,18 @@
 # linux-dash 的汉化版
 #### 原地址: https://github.com/afaqurk/linux-dash
 ---
-<br/>
-<h1 align="center">
-  linux-dash-zh
-</h1>
-
 <p align="center">
-  Linux Dash是一个基于 Web 的 dashboard, 它看起来简洁、清爽， 可用来监视 Linux 服务器信息。通过 linux-dash，你可以实时、按需监 视CPU、内存、负载、网络、磁盘、用户等许多系统状况。
+  <sub>v2.0</sub><br/>
+  <small>适用于linux系统的简单且开销较低的Web仪表板</small>
 </p>
 
 <p align="center">
-<small>Linux Dash Docs <a href="https://linux-dash.github.io/docs/#getting-started">Linux Dash v2.0</a>: in Fall 2016.</small>
-</p>
-
-<p align="center">
-  <strong>
-    <a href="#"><i>Demo</i></a> &nbsp;|&nbsp;
-    <a href="#特性"><i>特性</i></a> &nbsp;|&nbsp;
-    <a href="#安装">
-      <i>安装</i></a> &nbsp;|&nbsp;
-    <a href="#支持"><i>支持</i></a>
-  </strong>
+  <small>
+    演示 &nbsp;|&nbsp;
+    <a href="https://github.com/afaqurk/linux-dash/wiki">
+      文档
+    </a>
+  </small>
 </p>
 
 <p align="center">
@@ -29,7 +20,7 @@
     <img
       width="80%"
       src="./linux-dash.png"
-      alt="Linux Dash 中文版">
+      alt="Linux Dash中文版截图">
   </a>
 </p>
 
@@ -39,88 +30,90 @@
   <a href="https://github.com/NoBey/linux-dash-zh">
     <img
       width="80%"
-      alt="Linux Dash screenshot"
+      alt="Linux Dash截图"
       src="http://i.imgur.com/tehGyrQ.gif">
   </a>
 </p>
 
 <br/>
-<p align="center">
-  <a href="https://github.com/NoBey/linux-dash-zh">
-    <img
-      src="https://badges.gitter.im/gitterHQ/gitter.png"
-      alt="Linux Dash Gitter chat">
-  </a>
-</p>
-## 特性
-* 一个漂亮, 简单的基于web的linux服务器监控面板
-* 仅仅只需要1MB *(.git removed)*
-* 实时数据可视化更新, 可刷新, 和不断添加的模块
-* 支持在PHP, Node.js, Python, 和 Go 下安装
+
+## 特色
+* **小巧** ----- 仅占用硬盘400KB _（不计.git）！_
+* **纯朴** ----- 简约、美观的仪表板
+* **简易** ----- 嵌入式安装
+* **多元** ----- 从Node.js、Go、Python、PHP中选择堆栈
 
 ## 安装
 
-#### 第一步 : 下载 Linux Dash
-
-克隆 git 项目
+### 第1步
 ```sh
-# 中文版
-git clone https://github.com/NoBey/linux-dash-zh.git
-# 原版 地址
-git clone https://github.com/afaqurk/linux-dash.git
+## 1. 克隆仓库
+git clone --depth 1 https://github.com/NoBey/linux-dash-zh.git
+
+## 2. 转到克隆的目录
+cd linux-dash/app/server
+
 ```
-下载地址 : **[中文版](https://codeload.github.com/NoBey/linux-dash-zh/zip/master)** -
- **[原版](https://github.com/afaqurk/linux-dash/archive/master.zip)**
+或者，如果您希望手动下载：
 
-#### 第二步: 关于Linux Dash的安全问题
+```sh
+## 1. 下载.zip
+curl -LOk https://github.com/NoBey/linux-dash-zh/archive/master.zip && unzip master.zip
 
-Linux Dash 没有任何安全或身份验证功能
+## 2. 转到下载并解压缩的目录
+cd linux-dash-master/app/server
 
-**强烈建议** 在Linux Dash 的基础上添加安全措施保护
-
-#### 第三步: 启动 Linux Dash
-<h6 align="center">
-Linux Dash 能够运行在: <u>Node.js</u>, PHP, Go, 和 Python.
-<br/>
-<sub>
-* 推荐使用 `Node.js` 因为它原生就支持`websockets`和 高性能的 `I/O`操作.
-</sub>
-</h6>
-
-首先下载或克隆 `linux-dash`然后,参考部分为你的环境:
-##### Node.js
-
-NPM 安装依赖文件
-```
-npm install
 ```
 
-启动 Linux Dash
-```
-node server/
+### 第2步
+
+请参阅有关首选服务器linux-dash服务器的说明 _（全部纳入）_：
+
+* [Node.js](#if-using-nodejs) _（推荐）_
+* [Go](#if-using-go)
+* [Python](#if-using-python)
+* [PHP](#if-using-php)
+
+#### 如果使用Node.js
+```sh
+## 安装依赖
+npm install --production
+
+## 启动linux-dash（默认情况下在80端口上；可能需要sudo）
+## 您可以使用环境变量`LINUX_DASH_SERVER_PORT`来更改它（例如`LINUX_DASH_SERVER_PORT=8080 node server`）。
+## 或在下面的命令中提供--port标志
+node index.js
+
 ```
 
-默认端口是80 需要改变端口去 `server/index.js` 的文件修改端口号.
-
-<br/>
-##### PHP
-1. 启动你的 `exec`, `shell_exec`, 和 `escapeshellarg` 功能模块
-2. 重启你的web服务器 (Apache, nginx, etc.)
-  - For PHP + Apache setup follow the [Digital Ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-linux-dash-on-ubuntu-14-04).
-  - For help with nginx setup, see [this gist](https://gist.github.com/sergeifilippov/8909839) by [@sergeifilippov](https://github.com/sergeifilippov).
-
-<br/>
-##### Go
-进入 `linux-dash/server` 的目录 并运行
-```
+#### 如果使用Go
+```sh
+## 启动服务器（默认情况下在80端口上；可能需要sudo）
 go run index.go
 ```
 
-To build a binary, run `go build && ./server -h`. See [@tehbilly](https://github.com/sergeifilippov)'s notes [here](https://github.com/afaqurk/linux-dash/pull/281) for binary usage options
+要构建二进制文件，请运行`go build && ./server -h`。有关二进制用法选项，请参见[此处](https://github.com/afaqurk/linux-dash/pull/281)[@tehbilly](https://github.com/sergeifilippov)的注释
 
-##### Python
-运行 `./python-server.py` 默认端口是80 需要改变端口去 `python-server.py ` 的文件修改端口号.
+#### 如果使用Python
+```sh
+# 启动服务器（默认情况下在80端口上；可能需要sudo）。
+python index.py
+```
+
+#### 如果使用PHP
+
+1. 确保已启用`exec`、`shell_exec`和`escapeshellarg`函数
+2. 将您的Web服务器指向`linux-dash`下的`app/`目录
+2. 重新启动您的Web服务器（Apache、nginx等）
+  - 对于设置PHP+Apache，请遵循[Digital Ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-linux-dash-on-ubuntu-14-04)。
+  - 有关设置nginx的帮助，请参阅[@sergeifilippov](https://github.com/sergeifilippov)的[这个gist](https://gist.github.com/sergeifilippov/8909839)。
 
 ## 支持
 
- `issues`
+`issues`
+
+## 安全
+
+**强烈建议**通过您选择的安全措施来保护所有linux-dash的安装。
+
+Linux Dash没有任何安全性并不提供身份验证功能。
