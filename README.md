@@ -20,7 +20,7 @@
     <img
       width="80%"
       src="./linux-dash.png"
-      alt="Linux Dash中文版截图">
+      alt="Linux Dash中文版的截图">
   </a>
 </p>
 
@@ -28,7 +28,7 @@
   <a href="https://github.com/afaqurk/linux-dash">
     <img
       width="80%"
-      alt="Linux Dash截图"
+      alt="Linux Dash的截图"
       src="http://i.imgur.com/tehGyrQ.gif">
   </a>
 </p>
@@ -63,7 +63,7 @@ cd linux-dash-zh-master/server
 
 ### 第2步
 
-请参阅有关首选服务器linux-dash服务器的说明 _（全部纳入）_：
+请参阅有关首选服务器使用linux-dash-zh的说明 _（已全部纳入）_：
 
 * [Node.js](#%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8nodejs)_（推荐）_
 * [Go](#%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8go)
@@ -94,6 +94,7 @@ go run index.go
 ```sh
 # 返回到`linux-dash-zh`目录
 cd ..
+
 # 启动服务器（默认情况下在80端口上；可能需要sudo）。
 python python-server.py
 ```
@@ -112,6 +113,6 @@ python python-server.py
 
 ## 安全
 
-**强烈建议**通过您选择的安全措施来保护所有linux-dash的安装。
+**强烈建议**通过您选择的安全措施来保护所有linux-dash-zh的安装。
 
-Linux Dash没有任何安全性并不提供身份验证功能。
+Linux Dash中文版没有任何安全性并不提供身份验证功能。
