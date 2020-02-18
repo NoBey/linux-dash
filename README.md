@@ -92,7 +92,7 @@ go run index.go
 
 #### 如果使用Python
 ```sh
-# 返回到`linux-dash-zh`目录
+# 返回到`linux-dash-zh`目录，或是`linux-dash-zh-master`目录
 cd ..
 
 # 启动服务器（默认情况下在80端口上；可能需要sudo）。
